@@ -13,7 +13,7 @@ import com.gouravsh.smarthomeapp.R
 val lato = FontFamily(
     Font(R.font.lato_black),
     Font(R.font.lato_bold, weight = FontWeight.Bold),
-    Font(R.font.lato_regular)
+    Font(R.font.lato_regular, weight = FontWeight.Normal)
 )
 
 // Set of Material typography styles to start with
@@ -26,8 +26,22 @@ val Typography = Typography(
         letterSpacing = 0.sp,
         color = md_theme_light_onPrimary,
     ),
-    displayMedium = TextStyle(),
-    displaySmall = TextStyle(),
+    displayMedium = TextStyle(
+        fontFamily = lato,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 38.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp,
+        color = md_theme_light_onPrimary,
+    ),
+    displaySmall = TextStyle(
+        fontFamily = lato,
+        fontWeight = FontWeight.Normal,
+        fontSize = 34.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp,
+        color = md_theme_light_onPrimary,
+    ),
     headlineLarge = TextStyle(),
     headlineMedium = TextStyle(),
     headlineSmall = TextStyle(),

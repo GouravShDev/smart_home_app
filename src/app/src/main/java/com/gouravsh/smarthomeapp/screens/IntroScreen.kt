@@ -1,28 +1,39 @@
 package com.gouravsh.smarthomeapp.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.twotone.Home
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.ImageLoader
+import coil.compose.rememberAsyncImagePainter
+import coil.decode.SvgDecoder
+import com.gouravsh.smarthomeapp.R
+import com.gouravsh.smarthomeapp.ui.common.PrimaryButton
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
 @Composable
-fun HomeScreen() {
+fun IntroScreen() {
+    val imageLoader = ImageLoader.Builder(LocalContext.current)
+        .components {
+            add(SvgDecoder.Factory())
+        }
+        .build()
+
     Scaffold(
         containerColor = MaterialTheme.colorScheme.surface
     ) {
@@ -35,23 +46,31 @@ fun HomeScreen() {
                 Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
+                Box(modifier = Modifier.height(height = 32.dp))
 
                 Text(
                     text = "SMART HOME",
                     style = MaterialTheme.typography.displayLarge,
 
                     )
-                Box(modifier = Modifier.height(height = 16.dp))
+                Box(modifier = Modifier.height(height = 48.dp))
 
-                Icon(
-                    imageVector = Icons.TwoTone.Home,
+                Image(
+                    painter = rememberAsyncImagePainter(R.drawable.bulb, imageLoader),
                     contentDescription = null,
-                    Modifier
-                        .fillMaxSize()
-                        .height(80.dp),
-                    tint = MaterialTheme.colorScheme.background
+                    modifier = Modifier.fillMaxWidth(0.8f),
+                    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimary)
                 )
+                Box(modifier = Modifier.height(height = 48.dp))
+                PrimaryButton(text = "LOREM IPSUM") {
 
+                }
+                Box(modifier = Modifier.height(height = 24.dp))
+                Text(
+                    text = "Lorem ipsum dolor sit amet, consectetuer?",
+                    style = MaterialTheme.typography.displaySmall,
+                    textAlign = TextAlign.Center
+                )
 
             }
         }
