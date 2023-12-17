@@ -11,7 +11,7 @@ import com.gouravsh.smarthomeapp.R
 
 
 val lato = FontFamily(
-    Font(R.font.lato_black),
+    Font(R.font.lato_black, weight = FontWeight.Black),
     Font(R.font.lato_bold, weight = FontWeight.Bold),
     Font(R.font.lato_regular, weight = FontWeight.Normal)
 )
