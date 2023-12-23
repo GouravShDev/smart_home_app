@@ -36,7 +36,9 @@ object IntroDestination : NavigationDestination {
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(showBackground = true)
 @Composable
-fun IntroScreen() {
+fun IntroScreen(
+    navigateToSignIn: () -> Unit
+) {
     val imageLoader = ImageLoader.Builder(LocalContext.current)
         .components {
             add(SvgDecoder.Factory())
@@ -69,9 +71,9 @@ fun IntroScreen() {
                     colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onPrimary)
                 )
                 Box(modifier = Modifier.height(height = 48.dp))
-                PrimaryButton(text = "LOREM IPSUM") {
-
-                }
+                PrimaryButton(
+                    text = "LOREM IPSUM", onClick = navigateToSignIn
+                )
                 Box(modifier = Modifier.height(height = 24.dp))
                 Text(
                     text = "Lorem ipsum dolor sit amet, consectetuer?",

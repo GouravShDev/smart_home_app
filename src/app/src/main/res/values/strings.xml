@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Smart Home App</string>
     <string name="intro_title">SMART HOME</string>
+    <string name="signIn_title">Sign In</string>
 </resources>

@@ -29,10 +29,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.gouravsh.smarthomeapp.R
 import com.gouravsh.smarthomeapp.ui.common.PrimaryButton
+import com.gouravsh.smarthomeapp.ui.navigation.NavigationDestination
+
+object SignInDestination : NavigationDestination {
+    override val route: String
+        get() = "signIn"
+    override val titleRes: Int
+        get() = R.string.signIn_title
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -95,7 +103,8 @@ fun SignInScreen(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             TextButton(
-                modifier = Modifier.width(150.dp)
+                modifier = Modifier
+                    .width(150.dp)
                     .height(80.dp),
                 onClick = { /*TODO*/ },
                 shape = RoundedCornerShape(9.dp),
@@ -111,7 +120,8 @@ fun SignInScreen(
                 )
             }
             TextButton(
-                modifier = Modifier.width(150.dp)
+                modifier = Modifier
+                    .width(150.dp)
                     .height(80.dp),
                 onClick = { /*TODO*/ },
                 shape = RoundedCornerShape(9.dp),
