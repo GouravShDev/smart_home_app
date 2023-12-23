@@ -43,7 +43,14 @@ val Typography = Typography(
         color = md_theme_light_onPrimary,
     ),
     headlineLarge = TextStyle(),
-    headlineMedium = TextStyle(),
+    headlineMedium = TextStyle(
+        fontFamily = lato,
+        fontWeight = FontWeight.Normal,
+        fontSize = 28.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp,
+        color = md_theme_light_onPrimary,
+    ),
     headlineSmall = TextStyle(),
     titleLarge = TextStyle(
         fontFamily = lato,
@@ -52,7 +59,13 @@ val Typography = Typography(
         lineHeight = 28.sp,
         letterSpacing = 0.sp
     ),
-    titleMedium = TextStyle(),
+    titleMedium = TextStyle(
+        fontFamily = lato,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 20.sp,
+        lineHeight = 28.sp,
+        letterSpacing = 0.sp
+    ),
     titleSmall = TextStyle(),
     bodyLarge = TextStyle(
         fontFamily = lato,
