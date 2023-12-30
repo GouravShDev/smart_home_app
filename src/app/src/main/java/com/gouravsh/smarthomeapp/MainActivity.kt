@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.compose.SmartHomeAppTheme
-import com.gouravsh.smarthomeapp.screens.IntroScreen
+import com.gouravsh.smarthomeapp.ui.navigation.SmartHomeNavHost
 
 
 class MainActivity : ComponentActivity() {
@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                 ) {
-                    IntroScreen()
+                    SmartHomeNavHost()
                 }
             }
         }
