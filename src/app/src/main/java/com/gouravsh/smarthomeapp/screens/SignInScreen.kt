@@ -45,7 +45,8 @@ object SignInDestination : NavigationDestination {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SignInScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navigateToHome: () -> Unit
 ) {
     var name by remember {
         mutableStateOf("")
@@ -82,8 +83,8 @@ fun SignInScreen(
         Spacer(Modifier.height(23.dp))
         OutlinedTextField(
             modifier = Modifier.fillMaxWidth(),
-            value = name,
-            onValueChange = { name = it },
+            value = password,
+            onValueChange = { password = it },
             label = { Text(text = "Name") },
             colors = TextFieldDefaults.outlinedTextFieldColors(
                 focusedLeadingIconColor = MaterialTheme.colorScheme.primary,
@@ -92,7 +93,7 @@ fun SignInScreen(
             leadingIcon = { Icon(Icons.Outlined.Lock, contentDescription = null) }
         )
         Spacer(modifier = Modifier.height(30.dp))
-        PrimaryButton(text = "LOREM")
+        PrimaryButton(text = "LOREM", onClick = navigateToHome)
         Spacer(modifier = Modifier.height(20.dp))
         Text(text = "or", style = MaterialTheme.typography.displaySmall)
         Spacer(modifier = Modifier.height(20.dp))
@@ -146,5 +147,5 @@ fun SignInScreen(
 @Preview(showBackground = true)
 @Composable
 fun SignInScreenPreview() {
-    SignInScreen()
+    SignInScreen(navigateToHome = {})
 }

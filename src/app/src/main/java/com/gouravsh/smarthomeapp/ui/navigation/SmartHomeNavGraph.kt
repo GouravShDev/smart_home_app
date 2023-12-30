@@ -6,6 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.gouravsh.smarthomeapp.screens.HomeScreen
+import com.gouravsh.smarthomeapp.screens.HomeScreenDestination
 import com.gouravsh.smarthomeapp.screens.IntroDestination
 import com.gouravsh.smarthomeapp.screens.IntroScreen
 import com.gouravsh.smarthomeapp.screens.SignInDestination
@@ -13,8 +15,8 @@ import com.gouravsh.smarthomeapp.screens.SignInScreen
 
 @Composable
 fun SmartHomeNavHost(
-    navController: NavHostController = rememberNavController(),
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    navController: NavHostController = rememberNavController()
 ) {
     NavHost(
         navController = navController,
@@ -30,7 +32,13 @@ fun SmartHomeNavHost(
             route = SignInDestination.route
         )
         {
-            SignInScreen()
+            SignInScreen(navigateToHome = { navController.navigate(HomeScreenDestination.route) })
+        }
+
+        composable(
+            route = HomeScreenDestination.route
+        ) {
+            HomeScreen()
         }
     }
 

@@ -37,6 +37,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gouravsh.smarthomeapp.ui.common.AppTopBar
+import com.gouravsh.smarthomeapp.ui.common.IconAndSwitchCard
 import com.gouravsh.smarthomeapp.ui.navigation.NavigationDestination
 
 object HomeScreenDestination : NavigationDestination {
@@ -66,7 +67,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 modifier = Modifier.fillMaxWidth(),
                 shape = RectangleShape,
                 colors = CardDefaults.cardColors(
-                    containerColor = Color.White
+                    containerColor = MaterialTheme.colorScheme.onPrimary
                 )
             )
             {
@@ -103,81 +104,15 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             )
             {
 
-                Card(
-                    Modifier
-                        .fillMaxWidth()
-                        .weight(0.4f),
-                    shape = RectangleShape,
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color.White
-                    )
-                ) {
-                    Row(modifier = Modifier.padding(vertical = 10.dp, horizontal = 8.dp)) {
-                        Icon(
-                            imageVector = Icons.Outlined.Menu,
-                            contentDescription = null,
-                            modifier = Modifier.size(70.dp)
-                        )
-                        Spacer(Modifier.width(20.dp))
-                        Switch(
-                            modifier = Modifier
-                                .padding(top = 8.dp)
-                                .scale(1.1f), checked = false,
-                            onCheckedChange = {})
-                    }
-                    Column(modifier = Modifier.padding(horizontal = 18.dp)) {
-                        Text(
-                            modifier = Modifier.padding(vertical = 6.dp),
-                            text = "Lorem Ipsum",
-                            style = MaterialTheme.typography.bodyMedium,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(
-                            modifier = Modifier.padding(top = 3.dp, bottom = 18.dp),
-                            text = "Lorem Ipsum",
-                            style = MaterialTheme.typography.bodySmall,
-                            fontWeight = FontWeight.ExtraLight
-                        )
-                    }
-                }
+                IconAndSwitchCard(
+                    Modifier.weight(0.4f),
+                    icon = Icons.Outlined.Menu
+                )
                 Spacer(modifier = Modifier.width(20.dp))
-                Card(
-                    Modifier
-                        .fillMaxWidth()
-                        .weight(0.4f),
-                    shape = RectangleShape,
-                    colors = CardDefaults.cardColors(
-                        containerColor = Color.White
-                    )
-                ) {
-                    Row(modifier = Modifier.padding(vertical = 10.dp, horizontal = 8.dp)) {
-                        Icon(
-                            imageVector = Icons.Outlined.PlayArrow,
-                            contentDescription = null,
-                            modifier = Modifier.size(70.dp)
-                        )
-                        Spacer(Modifier.width(20.dp))
-                        Switch(
-                            modifier = Modifier
-                                .padding(top = 8.dp)
-                                .scale(1.1f), checked = false,
-                            onCheckedChange = {})
-                    }
-                    Column(modifier = Modifier.padding(horizontal = 18.dp)) {
-                        Text(
-                            modifier = Modifier.padding(vertical = 6.dp),
-                            text = "Lorem Ipsum",
-                            style = MaterialTheme.typography.bodyMedium,
-                            fontWeight = FontWeight.Bold
-                        )
-                        Text(
-                            modifier = Modifier.padding(top = 3.dp, bottom = 18.dp),
-                            text = "Lorem Ipsum",
-                            style = MaterialTheme.typography.bodySmall,
-                            fontWeight = FontWeight.ExtraLight
-                        )
-                    }
-                }
+                IconAndSwitchCard(
+                    Modifier.weight(0.4f),
+                    icon = Icons.Outlined.PlayArrow
+                )
 
             }
             Card(
@@ -213,7 +148,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                             Card(
                                 shape = RoundedCornerShape(25.dp), modifier = Modifier.size(25.dp),
                                 colors = CardDefaults.cardColors(
-                                    containerColor = Color.White
+                                    containerColor = MaterialTheme.colorScheme.onPrimary
                                 )
                             ) {
                                 Icon(
